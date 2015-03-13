@@ -12,3 +12,4 @@ deploy:
   app: fin-jam
   on:
     repo: FinJam/finjam
+  run: 'rake db:migrate'

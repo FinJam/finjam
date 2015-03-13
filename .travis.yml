@@ -4,4 +4,11 @@ sudo: false
 env: RAILS_ENV=test
 rvm: 2.2.1
 script:
-  - bundle exec rake db:migrate
+- bundle exec rake db:migrate
+deploy:
+  provider: heroku
+  api_key:
+    secure: cjwzaAxzm2T1eplvGIh+JIpJhmuXBEFb7ovp0BcSxqgUCMSo6Wi0LXT5Uy8stRuWzfp1EhaQBVnPZicDmEcjzcrqdU3Z0bmc/b7289m91Hz29IpLEcWE+P4gu97bxpYlAZr0M/f6WQ0kd3kl2YtdRHdadcFcuzyqdMQwKZRpIXw=
+  app: fin-jam
+  on:
+    repo: FinJam/finjam

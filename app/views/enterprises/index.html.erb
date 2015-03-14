@@ -14,9 +14,8 @@
   <tbody>
     <% @enterprises.each do |enterprise| %>
       <tr>
-        <td><%= enterprise.name %></td>
+        <td><%= link_to enterprise.name, enterprise %></td>
         <td><%= enterprise.description %></td>
-        <td><%= link_to 'Show', enterprise %></td>
         <% if current_user %>
          <td><%= link_to 'Edit', edit_enterprise_path(enterprise) %></td>
           <td><%= link_to 'Destroy', enterprise, method: :delete, data: { confirm: 'Are you sure?' } %></td>

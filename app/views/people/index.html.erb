@@ -19,8 +19,10 @@
         <td><%= person.description %></td>
         <td><%= person.user_id %></td>
         <td><%= link_to 'Show', person %></td>
-        <td><%= link_to 'Edit', edit_person_path(person) %></td>
-        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user %>
+          <td><%= link_to 'Edit', edit_person_path(person) %></td>
+          <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -19,11 +19,14 @@
         <td><%= enterprise.description %></td>
         <td><%= enterprise.user_id %></td>
         <td><%= link_to 'Show', enterprise %></td>
-        <td><%= link_to 'Edit', edit_enterprise_path(enterprise) %></td>
-        <td><%= link_to 'Destroy', enterprise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user %>
+         <td><%= link_to 'Edit', edit_enterprise_path(enterprise) %></td>
+          <td><%= link_to 'Destroy', enterprise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+

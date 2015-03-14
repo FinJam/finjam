@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150314174004) do
+=======
+ActiveRecord::Schema.define(version: 20150314181318) do
+>>>>>>> Add post date
 
   create_table "enterprises", force: :cascade do |t|
     t.string   "name"
@@ -48,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150314174004) do
     t.integer  "organization_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.datetime "event_at"
   end
 
   create_table "taggings", force: :cascade do |t|

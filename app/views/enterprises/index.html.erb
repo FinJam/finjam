@@ -2,12 +2,11 @@
 
 <h1>Listing Enterprises</h1>
 
-<table>
+<table class="table table-condensed table-hover">
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +16,6 @@
       <tr>
         <td><%= enterprise.name %></td>
         <td><%= enterprise.description %></td>
-        <td><%= enterprise.user_id %></td>
         <td><%= link_to 'Show', enterprise %></td>
         <% if current_user %>
          <td><%= link_to 'Edit', edit_enterprise_path(enterprise) %></td>
@@ -29,4 +27,3 @@
 </table>
 
 <br>
-

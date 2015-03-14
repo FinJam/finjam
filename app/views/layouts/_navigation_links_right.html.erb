@@ -1,4 +1,5 @@
 <% if current_user %>
+  <li><%= link_to 'My profile', person_path(current_user.person) %></li>
   <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
 <% else %>
   <li><%= link_to 'Sign up',  new_user_registration_path %></li>

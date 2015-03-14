@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150314174004) do
-=======
 ActiveRecord::Schema.define(version: 20150314181318) do
->>>>>>> Add post date
 
   create_table "enterprises", force: :cascade do |t|
     t.string   "name"

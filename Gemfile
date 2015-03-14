@@ -54,3 +54,5 @@ group :production do
 end
 
 gem 'acts-as-taggable-on', '~> 3.5.0'
+
+gem 'paperclip', '~> 4.2.1'

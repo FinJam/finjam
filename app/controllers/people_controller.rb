@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
+  before_action :set_tagstring, only: [:update]
 
   # GET /people
   # GET /people.json
@@ -15,10 +16,12 @@ class PeopleController < ApplicationController
   # GET /people/new
   def new
     @person = Person.new
+    set_tag_s
   end
 
   # GET /people/1/edit
   def edit
+    set_tag_s
   end
 
   # POST /people
@@ -26,6 +29,7 @@ class PeopleController < ApplicationController
   def create
     @person = Person.new(person_params)
 
+    set_tagstring
     respond_to do |format|
       if @person.save
         format.html { redirect_to @person, notice: 'Person was successfully created.' }
@@ -70,5 +74,13 @@ class PeopleController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
       params.require(:person).permit(:name, :description, :user_id, :tag_list, :image)
+    end
+
+    def set_tag_s
+      @tag_s = @person.tags.map(&:name).to_sentence(last_word_connector: ', ', two_words_connector: ', ')
+    end
+
+    def set_tagstring
+      @person.tagstring = params[:person][:tags]
     end
 end

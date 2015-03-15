@@ -9,8 +9,7 @@ class Tag < ActiveRecord::Base
   has_many :organizations, through: :organization_tags
 
   def self.get(name)
-    tag = Tag.where('lower(name) = ?', name.downcase)
-    tag = Tag.create name: name if tag.empty?
-    tag
+    tag = Tag.where('lower(name) = ?', name.downcase).first
+    tag ||= Tag.create name: name
   end
 end

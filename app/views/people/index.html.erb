@@ -2,6 +2,11 @@
 
 <h1>People</h1>
 
+<script type="text/javascript" src="assets/javascripts/filter.js"></script>
+<div class="input-group" style="float:left">
+    <input id="filter" type="text" class="form-control" placeholder="Filter results">
+</div>
+
 <table class="table table-condensed table-hover">
   <thead>
     <tr>
@@ -12,7 +17,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="searchable">
     <% @people.each do |person| %>
       <tr>
         <td><%= link_to person.name, person %></td>

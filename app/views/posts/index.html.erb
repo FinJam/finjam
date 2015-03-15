@@ -2,7 +2,12 @@
 
 <h1>Events</h1>
 
-<div class="posts"><%= render @posts %></div>
+<script type="text/javascript" src="assets/javascripts/event_filter.js"></script>
+<div class="input-group">
+    <input id="filter" type="text" class="form-control" placeholder="Filter results">
+</div>
+
+<div class="posts searchable"><%= render @posts %></div>
 
 <div class="new-link">
   <% if current_user %>

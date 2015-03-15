@@ -6,16 +6,13 @@
 </div>
 
 <div style="float: left">
-<p>
-  <h3><%= @person.name %></h3>
-</p>
+<h3><%= @person.name %></h3>
 
 <p>
   <%= @person.description %>
 </p>
 
 <p>
-  <strong>Interests:</strong>
   <%= render @person.tags %>
 </p>
 </div>

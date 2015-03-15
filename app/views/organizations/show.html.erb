@@ -1,16 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <h3><%= @organization.name %></h3>
-</p>
+<h3><%= @organization.name %></h3>
 
 <p>
-  <strong>Description:</strong>
   <%= @organization.description %>
 </p>
 
 <p>
-  <strong>Tags:</strong>
   <%= render @organization.tags %>
 </p>
 
@@ -19,5 +15,4 @@
     <td><%= link_to 'Edit', edit_organization_path(@organization) %></td>
     <td><%= link_to 'Destroy', @organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   <% end %>
-  <%= link_to 'Back', organizations_path %>
 </div>

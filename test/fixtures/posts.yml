@@ -3,11 +3,9 @@
 one:
   title: MyString
   description: MyString
-  enterprise_id: 1
   organization_id: 1
 
 two:
   title: MyString
   description: MyString
-  enterprise_id: 1
   organization_id: 1

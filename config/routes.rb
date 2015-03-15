@@ -7,8 +7,6 @@ Rails.application.routes.draw do
 
   resources :people
 
-  resources :enterprises
-
   resources :organizations
 
   devise_for :users

@@ -3,6 +3,7 @@ class Organization < ActiveRecord::Base
 
   has_many :organization_tags, dependent: :destroy
   has_many :tags, through: :organization_tags
+  has_many :posts, dependent: :destroy
 
   after_save :update_tags
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150315091224) do
+ActiveRecord::Schema.define(version: 20150315101026) do
 
   create_table "organization_tags", force: :cascade do |t|
     t.integer  "organization_id"
@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 20150315091224) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.integer  "enterprise_id"
     t.integer  "organization_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   after_save :update_tags
 
   def poster
-    return organization.name if organization
+    return organization.name if self.organization
     'Unknown'
   end
 

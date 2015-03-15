@@ -55,6 +55,4 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
-gem 'acts-as-taggable-on', '~> 3.5.0'
-
 gem 'paperclip', '~> 4.2.1'

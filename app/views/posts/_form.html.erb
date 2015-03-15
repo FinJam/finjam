@@ -20,12 +20,8 @@
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :enterprise_id %><br>
-    <%= f.number_field :enterprise_id %>
-  </div>
-  <div class="field">
-    <%= f.label :organization_id %><br>
-    <%= f.number_field :organization_id %>
+    <%= f.label :tags %><br>
+    <%= f.text_area :tags, value: @tag_s %>
   </div>
   <div class="field">
     <%= f.label :event_at %><br>

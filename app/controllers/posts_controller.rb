@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_tagstring, only: [:update]
 
   # GET /posts
   # GET /posts.json
@@ -15,17 +16,19 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    set_tag_s
   end
 
   # GET /posts/1/edit
   def edit
+    set_tag_s
   end
 
   # POST /posts
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    set_tagstring
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -70,5 +73,13 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :description, :enterprise_id, :organization_id)
+    end
+
+    def set_tag_s
+      @tag_s = @post.tags.map(&:name).to_sentence(last_word_connector: ', ', two_words_connector: ', ')
+    end
+
+    def set_tagstring
+      @post.tagstring = params[:post][:tags]
     end
 end

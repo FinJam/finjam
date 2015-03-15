@@ -21,6 +21,17 @@
 }
 .post-tags {
   a {
-    color: #000 !important;
+
+    background: #CC9900 !important;
+    display: inline-block;
+    color: #fff !important;
+    position: relative;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 1px;
+    margin: 0 5px 0 0;
+    text-decoration: none;
   }
 }

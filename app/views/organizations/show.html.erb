@@ -14,5 +14,11 @@
   <strong>Tags:</strong>
   <%= render @organization.tags %>
 </p>
+
+<% if current_user %>
+  <td><%= link_to 'Edit', edit_organization_path(@organization) %></td>
+  <td><%= link_to 'Destroy', @organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>
+
 <br>
 <%= link_to 'Back', organizations_path %>

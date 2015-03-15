@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tag.name %>
-</p>
-
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
-<%= link_to 'Back', tags_path %>
+<h1><%= @tag.name %></h1>
+<hr>
+<h3>Events</h3>
+<%= render @tag.posts %>
+<% unless @tag.people.empty? %>
+  <h3>People</h3>
+  <%= render @tag.people %>
+<% end %>

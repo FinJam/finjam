@@ -1,0 +1,6 @@
+<div class="person" >
+  <span class=""><%= image_tag person.image.url(:medium) %></span>
+  <span class="person-name"><%= link_to person.name, person %></span>
+  <span class="person-description"><%= person.description %></span>
+  <span class="person-tag"> <%= render person.tags %></span>
+</div>

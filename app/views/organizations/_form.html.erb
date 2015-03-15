@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :tags, "Tags for this organization (separate with commas)" %><br>
-    <%= f.number_field :user_id %>
+    <%= f.text_area :tags, value: @tag_s %>
   </div>
   <div class="actions">
     <%= f.submit %>

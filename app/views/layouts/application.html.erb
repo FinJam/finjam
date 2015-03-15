@@ -28,6 +28,7 @@
       </ul>
     </div>
   </nav>
+  <%= render 'layouts/carousel' if params[:controller] == 'posts' && params[:action] == 'index' %>
   <div class="container">
     <%= yield %>
   </div>

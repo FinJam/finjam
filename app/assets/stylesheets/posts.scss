@@ -1,3 +1,18 @@
 .post {
   padding: 0.25em 0;
 }
+.post-title {
+  font-size: 30px;
+  a {
+    color: #ffd106 !important;
+  }
+  a:hover {
+    color: #ffd106 !important;
+  }
+}
+.post-poster {
+  color: #acacac !important;
+  a {
+    color: #acacac !important;
+  }
+}

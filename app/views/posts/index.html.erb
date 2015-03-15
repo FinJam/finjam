@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<div style="float: left">
+<h1>Events</h1></div>
 
 <script type="text/javascript" src="assets/javascripts/event_filter.js"></script>
-<div class="input-group">
+<div class="input-group" style="float: right; margin-top: 14px;">
     <input id="filter" type="text" class="form-control" placeholder="Filter results">
 </div>
-
-<div class="posts searchable"><%= render @posts %></div>
+<div style="clear: left" class="posts searchable"><%= render @posts %></div>
 
 <div class="new-link">
   <% if current_user %>

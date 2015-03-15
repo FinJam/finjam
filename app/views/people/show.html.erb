@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+
+<div style="float: left">
+  <%= image_tag @person.image.url(:medium) %>
+
+</div>
+
+<div style="float: left">
 <p>
   <strong>Name:</strong>
   <%= @person.name %>
@@ -14,9 +21,11 @@
   <strong>Tags:</strong>
   <%= render @person.tags %>
 </p>
+</div>
 
-<p>
-  <%= image_tag @person.image.url(:medium) %>
-</p>
-<br>
+
+
+
+<div style="clear: left">
 <%= link_to 'Back', people_path %>
+</div>

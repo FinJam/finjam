@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Organization Tags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Organization</th>
+      <th>Tag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @organization_tags.each do |organization_tag| %>
+      <tr>
+        <td><%= organization_tag.organization_id %></td>
+        <td><%= organization_tag.tag_id %></td>
+        <td><%= link_to 'Show', organization_tag %></td>
+        <td><%= link_to 'Edit', edit_organization_tag_path(organization_tag) %></td>
+        <td><%= link_to 'Destroy', organization_tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Organization tag', new_organization_tag_path %>

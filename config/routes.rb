@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :organization_tags
+
   resources :person_tags
 
   resources :post_tags

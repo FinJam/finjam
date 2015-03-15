@@ -1,5 +1,6 @@
 class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
+  before_action :set_tagstring, only: [:update]
 
   # GET /organizations
   # GET /organizations.json
@@ -15,10 +16,12 @@ class OrganizationsController < ApplicationController
   # GET /organizations/new
   def new
     @organization = Organization.new
+    set_tag_s
   end
 
   # GET /organizations/1/edit
   def edit
+    set_tag_s
   end
 
   # POST /organizations
@@ -26,6 +29,7 @@ class OrganizationsController < ApplicationController
   def create
     @organization = Organization.new(organization_params)
 
+    set_tagstring
     respond_to do |format|
       if @organization.save
         format.html { redirect_to @organization, notice: 'Organization was successfully created.' }
@@ -70,5 +74,13 @@ class OrganizationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def organization_params
       params.require(:organization).permit(:name, :description, :user_id)
+    end
+
+    def set_tag_s
+      @tag_s = @organization.tags.map(&:name).to_sentence(last_word_connector: ', ', two_words_connector: ', ')
+    end
+
+    def set_tagstring
+      @organization.tagstring = params[:organization][:tags]
     end
 end

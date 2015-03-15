@@ -27,6 +27,11 @@
     <%= f.label :event_at %><br>
     <%= f.date_select :event_at, class: 'datetimepicker' %>
   </div>
+  <div class="field">
+    <%= f.label :organization %><br>
+    <%= f.select :organization_id, options_from_collection_for_select(Organization.all, :id, :name) %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

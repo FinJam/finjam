@@ -28,8 +28,6 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    organization = Organization.find_by(user_id: current_user.id)
-    @post.organization = organization
     set_tagstring
     respond_to do |format|
       if @post.save
